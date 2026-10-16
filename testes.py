@@ -188,7 +188,7 @@ def teste_programa_exemplo():
 
 if __name__ == "__main__":
 
-    print("Executando testes-base...")
+    print("Executando testes...")
     print()
 
     teste_load()
