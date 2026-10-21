@@ -12,15 +12,16 @@ cpu = CPU()
 
 buff_aleatorio = random.choice([0, 5])
 
-cpu.memoria[0] = "LOAD R0, 20"                
-cpu.memoria[1] = "LOAD R1, 20"                
-cpu.memoria[2] = f"LOAD R2, {buff_aleatorio}" 
-cpu.memoria[3] = "ADD R1, R2"                 
-cpu.memoria[4] = "LOAD R3, 5"                 
-cpu.memoria[5] = "SUB R1, R3"                 
-cpu.memoria[6] = "SUB R0, R1"                 
-cpu.memoria[7] = "STORE R0, 13"               
-cpu.memoria[8] = "HALT"
+
+cpu.memoria[0] = "LOAD R0, 20"  # R0 = HP inicial do monstro (20)
+cpu.memoria[1] = "LOAD R1, 20"  # R1 = Dano base do jogador (20)             
+cpu.memoria[2] = f"LOAD R2, {buff_aleatorio}" # R2 = Buff de ataque sorteado (0 ou 5)
+cpu.memoria[3] = "ADD R1, R2"   # R1 = Dano total (Base + Buff)              
+cpu.memoria[4] = "LOAD R3, 5"   # R3 = Defesa do monstro (5)              
+cpu.memoria[5] = "SUB R1, R3"   # R1 = Dano final (Dano total - Defesa)              
+cpu.memoria[6] = "SUB R0, R1"   # R0 = HP restante (HP monstro - Dano final)              
+cpu.memoria[7] = "STORE R0, 13"  # Salva o HP restante na posição 13 da memória             
+cpu.memoria[8] = "HALT" # Encerra a execução da CPU
 
 
 print("======================================")
